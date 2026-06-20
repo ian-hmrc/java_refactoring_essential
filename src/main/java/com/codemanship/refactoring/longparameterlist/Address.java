@@ -7,4 +7,11 @@ public record Address(
         String postcode,
         String country
 ) {
+    String formatAddress() {
+        return addressLine1() + ", "
+                + (addressLine2() != null ? addressLine2() + ", " : "")
+                + city() + ", "
+                + postcode() + ", "
+                + country();
+    }
 }
