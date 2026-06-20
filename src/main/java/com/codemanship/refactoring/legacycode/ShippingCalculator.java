@@ -1,37 +1,35 @@
 package com.codemanship.refactoring.legacycode;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-
 public class ShippingCalculator {
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
-    private final HttpClient httpClient = HttpClient.newHttpClient();
+    private final OrderService orderService;
+
+    public ShippingCalculator(OrderService orderService) {
+        this.orderService = orderService;
+    }
+
+    /*
+    ================================
+    Order ID: 1001
+    Shipping cost: 2.5
+    
+    ================================
+    Running order 1002
+    ================================
+    Order ID: 1002
+    Shipping cost: 36.8
+    
+    ================================
+    Running order 1003
+    ================================
+    Order ID: 1003
+    Shipping cost: 27.4
+     */
 
     public double calculateShipping(int orderId) {
 
         try {
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(
-                            "https://codemanship.co.uk/api/orders.php?orderId=" + orderId
-                    ))
-                    .GET()
-                    .build();
-
-            HttpResponse<String> response =
-                    httpClient.send(
-                            request,
-                            HttpResponse.BodyHandlers.ofString()
-                    );
-
-            String json = response.body();
-
-            Order order =
-                    objectMapper.readValue(json, Order.class);
+            Order order = orderService.getOrder(orderId);
 
             switch (order.getShippingType()) {
 
@@ -57,4 +55,5 @@ public class ShippingCalculator {
             return -1;
         }
     }
+
 }
