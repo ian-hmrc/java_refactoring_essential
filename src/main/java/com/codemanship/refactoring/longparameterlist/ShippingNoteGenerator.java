@@ -6,24 +6,18 @@ public class ShippingNoteGenerator {
             String customerFirstName,
             String customerLastName,
 
-            String addressLine1,
-            String addressLine2,
-            String city,
-            String postcode,
-            String country,
-
-            String orderId,
+            Address address1, String orderId,
             String itemDescription,
             int quantity
     ) {
 
         String fullName = customerFirstName + " " + customerLastName;
 
-        String address = addressLine1 + ", "
-                + (addressLine2 != null ? addressLine2 + ", " : "")
-                + city + ", "
-                + postcode + ", "
-                + country;
+        String address = address1.addressLine1() + ", "
+                + (address1.addressLine2() != null ? address1.addressLine2() + ", " : "")
+                + address1.city() + ", "
+                + address1.postcode() + ", "
+                + address1.country();
 
         return "SHIPPING NOTE\n"
                 + "Order: " + orderId + "\n"

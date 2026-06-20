@@ -15,13 +15,7 @@ class ShippingNoteServiceTest {
                 "Jane",
                 "Doe",
 
-                "12 Baker Street",
-                "Flat 4B",
-                "London",
-                "NW1 6XE",
-                "UK",
-
-                "ORD-123",
+                new Address("12 Baker Street", "Flat 4B", "London", "NW1 6XE", "UK"), "ORD-123",
                 "Wireless Headphones",
                 2
         );
@@ -45,13 +39,7 @@ class ShippingNoteServiceTest {
                 "John",
                 "Smith",
 
-                "1 High Street",
-                "Apt 2",
-                "Manchester",
-                "M1 2AB",
-                "UK",
-
-                "ORD-999",
+                new Address("1 High Street", "Apt 2", "Manchester", "M1 2AB", "UK"), "ORD-999",
                 "Laptop",
                 1
         );
@@ -66,13 +54,7 @@ class ShippingNoteServiceTest {
                 "Alice",
                 "Brown",
 
-                "50 King Street",
-                "Unit 3",
-                "Birmingham",
-                "B1 1AA",
-                "UK",
-
-                "ORD-555",
+                new Address("50 King Street", "Unit 3", "Birmingham", "B1 1AA", "UK"), "ORD-555",
                 "Tablet",
                 5
         );
@@ -89,13 +71,7 @@ class ShippingNoteServiceTest {
                 "Emma",
                 "Jones",
 
-                "99 High Road",
-                "Floor 2",
-                "Leeds",
-                "LS1 4AB",
-                "UK",
-
-                "ORD-777",
+                new Address("99 High Road", "Floor 2", "Leeds", "LS1 4AB", "UK"), "ORD-777",
                 "Monitor",
                 3
         );
@@ -114,13 +90,7 @@ class ShippingNoteServiceTest {
                 "Tom",
                 "White",
 
-                "10 Market Street",
-                "",
-                "Liverpool",
-                "L1 8JQ",
-                "UK",
-
-                "ORD-321",
+                new Address("10 Market Street", "", "Liverpool", "L1 8JQ", "UK"), "ORD-321",
                 "Keyboard",
                 10
         );
