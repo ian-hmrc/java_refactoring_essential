@@ -3,15 +3,14 @@ package com.codemanship.refactoring.longparameterlist;
 public class ShippingNoteGenerator {
 
     public String generateShippingNote(
-            String customerFirstName,
-            String customerLastName,
-
-            Address address1, String orderId,
+            Customer customer,
+            Address address1,
+            String orderId,
             String itemDescription,
             int quantity
     ) {
 
-        String fullName = customerFirstName + " " + customerLastName;
+        String fullName = customer.customerFirstName() + " " + customer.customerLastName();
 
         String address = address1.addressLine1() + ", "
                 + (address1.addressLine2() != null ? address1.addressLine2() + ", " : "")
