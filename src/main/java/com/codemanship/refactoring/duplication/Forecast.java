@@ -14,6 +14,12 @@ class Forecast {
         this.windSpeed = windSpeed;
     }
 
+    static String formatForecast(Forecast forecast, String timeOfDay) {
+        String line = timeOfDay + forecast.getTemperature() + "°C, "
+                + forecast.getCondition() + ", wind " + forecast.getWindSpeed() + "km/h";
+        return line;
+    }
+
     public double getTemperature() {
         return temperature;
     }
