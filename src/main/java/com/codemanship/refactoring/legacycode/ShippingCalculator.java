@@ -10,18 +10,23 @@ public class ShippingCalculator {
 
     /*
     ================================
+    Running order 1001
+    ================================
+    Order: weight: 5.0, type: STANDARD, distance: 120.0
     Order ID: 1001
     Shipping cost: 2.5
-    
+
     ================================
     Running order 1002
     ================================
+    Order: weight: 8.5, type: EXPRESS, distance: 300.0
     Order ID: 1002
     Shipping cost: 36.8
-    
+
     ================================
     Running order 1003
     ================================
+    Order: weight: 2.0, type: OVERNIGHT, distance: 50.0
     Order ID: 1003
     Shipping cost: 27.4
      */

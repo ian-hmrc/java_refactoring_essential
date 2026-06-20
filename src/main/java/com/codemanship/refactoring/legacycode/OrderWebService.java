@@ -34,6 +34,8 @@ public class OrderWebService implements OrderService {
 
         Order order =
                 objectMapper.readValue(json, Order.class);
+
+        System.out.println("Order: weight: " + order.getWeightKg() + ", type: " + order.getShippingType() + ", distance: " + order.getDistanceKm());
         return order;
     }
 }
