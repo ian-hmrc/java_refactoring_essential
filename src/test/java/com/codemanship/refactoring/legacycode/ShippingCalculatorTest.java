@@ -35,4 +35,14 @@ class ShippingCalculatorTest {
 
         assertEquals(27.4, shippingCost);
     }
+
+    @Test
+    void calculateShippingForOrder1004() {
+        OrderService mockOrderService = orderId -> new Order(1004, "INTERNATIONAL", 2.0, 50.0, false);
+        ShippingCalculator shippingCalculator = new ShippingCalculator(mockOrderService);
+
+        double shippingCost = shippingCalculator.calculateShipping(1004);
+
+        assertEquals(3.0, shippingCost);
+    }
 }

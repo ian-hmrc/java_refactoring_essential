@@ -48,6 +48,9 @@ public class ShippingCalculator {
                 case "OVERNIGHT":
                     return order.getWeightKg() * 1.2 + 25;
 
+                case "INTERNATIONAL":
+                    return order.getWeightKg() *1.5;
+
                 default:
                     throw new RuntimeException(
                             "Unknown shipping type: "
