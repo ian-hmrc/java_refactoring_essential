@@ -5,10 +5,7 @@ public class ShippingNoteGenerator {
     public String generateShippingNote(
             Customer customer,
             Address address1,
-            String orderId,
-            String itemDescription,
-            int quantity
-    ) {
+            Order order) {
 
         String fullName = customer.customerFirstName() + " " + customer.customerLastName();
 
@@ -19,10 +16,10 @@ public class ShippingNoteGenerator {
                 + address1.country();
 
         return "SHIPPING NOTE\n"
-                + "Order: " + orderId + "\n"
+                + "Order: " + order.orderId() + "\n"
                 + "Customer: " + fullName + "\n"
                 + "Ship To: " + address + "\n"
-                + "Item: " + itemDescription + "\n"
-                + "Quantity: " + quantity;
+                + "Item: " + order.itemDescription() + "\n"
+                + "Quantity: " + order.quantity();
     }
 }
