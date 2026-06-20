@@ -9,22 +9,22 @@ class WeatherReport {
         for (Forecast forecast : forecasts) {
 
             if (forecast.isMorning()) {
-                String line = Forecast.formatForecast(forecast, "Morning: ");
+                String line = forecast.formatForecast(forecast, "Morning: ");
                 output.add(line);
             }
 
             if (forecast.isAfternoon()) {
-                String line = Forecast.formatForecast(forecast, "Afternoon: ");
+                String line = forecast.formatForecast(forecast, "Afternoon: ");
                 output.add(line);
             }
 
             if (forecast.isEvening()) {
-                String line = Forecast.formatForecast(forecast, "Evening: ");
+                String line = forecast.formatForecast(forecast, "Evening: ");
                 output.add(line);
             }
 
             if (forecast.isNight()) {
-                String line = Forecast.formatForecast(forecast, "Night: ");
+                String line = forecast.formatForecast(forecast, "Night: ");
                 output.add(line);
             }
         }
