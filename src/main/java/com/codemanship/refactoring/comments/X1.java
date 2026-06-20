@@ -2,21 +2,17 @@ package com.codemanship.refactoring.comments;
 
 public class X1 {
 
-    static int m(int q, int z) {
-        int p = 0;
+    static int sumOfSquares(int lowerBound, int upperBound) {
+        int sumOfSquares = 0;
 
-        // Iterate from lower bound (q) to upper bound (z)
-        for (int i = q; i <= z; i++) {
-            // Add square of each number in the range
-            p += n(i);
+        for (int i = lowerBound; i <= upperBound; i++) {
+            sumOfSquares += squareOfNumber(i);
         }
 
-        // Return accumulated sum
-        return p;
+        return sumOfSquares;
     }
 
-    static int n(int k) {
-        // Return square of input
+    static int squareOfNumber(int k) {
         return k * k;
     }
 }
