@@ -14,7 +14,7 @@ class Forecast {
         this.windSpeed = windSpeed;
     }
 
-    public String formatForecast(Forecast forecast, String timeOfDay) {
+    public String formatForecast(Forecast forecast) {
         String firstLetter = period.substring(0, 1).toUpperCase();
         String timeOfDay1 = firstLetter + period.substring(1);
         return timeOfDay1 + ": "+ forecast.getTemperature() + "°C, "
