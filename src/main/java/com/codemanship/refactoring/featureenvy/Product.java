@@ -16,4 +16,14 @@ class Product {
     public boolean isOnSale() {
         return onSale;
     }
+
+    double price() {
+        double price = getPrice();
+
+        if (isOnSale()) {
+            price = price * 0.8;
+        }
+
+        return price;
+    }
 }
